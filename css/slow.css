@@ -15,10 +15,10 @@ div.thumb img{
 	border:1px solid #82c3ff;
 }
 div.ls{
-	background:url(images/framels.png) no-repeat center;
+	background:url(../images/framels.png) no-repeat center;
 }
 div.pt{
-	background:url(images/framept.png) no-repeat center;
+	background:url(../images/framept.png) no-repeat center;
 }
 div.ls img{
 	margin:0px;
@@ -39,10 +39,10 @@ div.pt a{
 	padding:11px 36px 14px 34px;
 }
 div.ls a:hover{
-	background:url(images/framels_hover.png) no-repeat center;
+	background:url(../images/framels_hover.png) no-repeat center;
 }
 div.pt a:hover{
-	background:url(images/framept_hover.png) no-repeat center;
+	background:url(../images/framept_hover.png) no-repeat center;
 }
 #showPhoto{
 	position:absolute;
