@@ -1,0 +1,104 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	margin:0.8em;
+	padding:0px;
+}
+div.thumb{
+	float:left;
+	height:160px;
+	width:160px;
+	margin:0px;
+	padding:0px;
+}
+div.thumb img{
+	border:1px solid #82c3ff;
+}
+div.ls{
+	background:url(images/framels.png) no-repeat center;
+}
+div.pt{
+	background:url(images/framept.png) no-repeat center;
+}
+div.ls img{
+	margin:0px;
+	height:90px;
+	width:135px;
+}
+div.pt img{
+	margin:0px;
+	height:135px;
+	width:90px;
+}
+div.ls a{
+	display:block;
+	padding:34px 14px 36px 11px;
+}
+div.pt a{
+	display:block;
+	padding:11px 36px 14px 34px;
+}
+div.ls a:hover{
+	background:url(images/framels_hover.png) no-repeat center;
+}
+div.pt a:hover{
+	background:url(images/framept_hover.png) no-repeat center;
+}
+#showPhoto{
+	position:absolute;
+	width:620px;
+	height:570px;
+	z-index:200;
+}
+#showPhoto #closeImg{
+	position:absolute;
+	right:10px;
+	top:10px;
+	width:20px;
+	height:20px;
+	cursor:pointer;
+	z-index:2;
+}	
+#showPic{
+	width:620px;
+	height:570px;
+	position:absolute;
+	left:0;
+	top:0;
+	text-align:center;
+}
+#bgblack{
+	 width:620px;
+	 height:570px;
+	 position:absolute;
+	 left:0px;
+	 top:0px;
+	 background:#000000;
+	 z-index:-1;
+}
+
+#showPic img{
+	padding:1px;
+	border:1px solid #ffffff;
+	z-index:1;
+	position:relative;
+	width:500px;
+	height:450px;
+	margin-top:60px;
+}
+#navigator{
+	position:absolute;
+	z-index:3;
+	color:#ffffff;
+	bottom:30px;
+	left:200px;
+	font-size:15px;
+	text-align:center;
+}
+#navigator span{
+	padding:20px;
+}
+#navigator span:hover{
+	font-weight:bold;
+	cursor:pointer;
+}
