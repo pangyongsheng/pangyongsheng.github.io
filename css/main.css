@@ -240,3 +240,10 @@ body{
 	z-index:0;
 	background:url(../images/body_side_r_1.png) center no-repeat;
 }
+#background_img{
+	width:100%;
+	height:100%;
+	position:fixed;
+	opacity:0.9;
+	filter:alpha(opacity=90);
+}
