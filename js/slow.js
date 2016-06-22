@@ -7,6 +7,7 @@ $(function(){
 	//根据不同图片设置不同的背景框
 	for(var i=0;i<iNum;i++)
 	{
+	
 		if(1)
 		{
 			$("div:has(a):eq("+i+")").addClass("ls");
@@ -20,7 +21,7 @@ $(function(){
 	$("#showPhoto").hide();
 	$("#bgblack").css("opacity",0.9);
 	
-	//单击实现缩略图
+	//单击实现缩略图大图显示
 	$("div a:has(img)").click(function(){
 		$("#showPhoto").css({
 			"left":($(window).width()/2-300>20?$(window).width()/2-310:20),
@@ -36,6 +37,11 @@ $(function(){
 			$("#showPic").find("img").css("marginTop","60px");
 		else if($(this).parent().hasClass("pt"))
 			$("#showPic").find("img").css("marginTop","0px");
+		//背景变暗
+		$("document body").attr({
+			background:"#000000",
+			opacity:"0.3"
+		});
 	})
 	//close按钮关闭大图
 	$("#closeImg").click(function(){
@@ -44,7 +50,39 @@ $(function(){
 	//上一张、下一张
 	var currentSrc;
 	var bMargin;
-	$("#prev")
+	//上一张
+	$("#prev").click(function(){
+		currentSrc=$("#showPic").find("img").attr("src");
+		var numS=currentSrc.indexOf("/")+1;
+		var numL=currentSrc.indexOf(".");
+		var numNow=parseInt(currentSrc.slice(numS,numL));
+		if(numNow!=1)
+		{
+			numNow--;
+			var pnum="images/"+numNow+".jpg";
+			$("#showPic").find("img").attr("src",pnum);
+		}
+			
+		else
+			alert("This is first picture");
+	})
+	//下一张
+	$("#next").click(function(){
+		currentSrc=$("#showPic").find("img").attr("src");
+		var numS=currentSrc.indexOf("/")+1;
+		var numL=currentSrc.indexOf(".");
+		var numNow=parseInt(currentSrc.slice(numS,numL));
+		if(numNow!=iNum)
+		{
+			numNow++;
+			var pnum="images/"+numNow+".jpg";
+			$("#showPic").find("img").attr("src",pnum);
+		}
+			
+		else
+			alert("This is last picture");
+	})
+	
 	
 //加载标记
 })

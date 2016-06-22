@@ -49,16 +49,16 @@ body{
 }
 #menu{
 	width:100%;
-	height:50px;
+	height:70px;
 	position:fixed;
 	top:0;
 	background:#333;
 	opacity:0.4;
 	filter:alpha(opacity=40);
-	z-index:100;
+	z-index:200;
 }
 .menu{
-	height:36px;
+	height:70%;
 	position:relative;
 	left:50%;
 	margin-left:-300px;
@@ -84,7 +84,7 @@ body{
 #menu_e{
 	top:-20px;
 	color:#eee;
-	height:14px;
+	height:30%;
 	font-size:1.5em;
 	float:none;
 }
@@ -92,11 +92,10 @@ body{
 	visibility:hidden;
 }
 #head{
-	width:1000px;
+	width:80%;
 	height:200px;
 	position:relative;
-	left:50%;
-	margin-left:-500px;
+	margin:0 auto;
 	background:#ffc;
 	box-shadow:5px 5px 5px #666;
 }
@@ -109,35 +108,33 @@ body{
 	
 }
 #content{
-	width:1000px;
+	width:80%;
 	height:auto;
 	position:relative;
 	left:50%;
-	margin-left:-500px;
+	margin-left:-40%;
 	background:#fff;
 	margin-top:10px;
 }
 #left{
-	width:700px;
+	width:80%;
 	height:auto;
-	
 	
 }
 #right{
-	width:290px;
+	width:15%;
 	height:auto;
-
 }
 .cont{
 	float:left;
 	margin-left:3px;
 }
 .article{
-	width:600px;
+	width:90%;
 	height:200px;
 	position:relative;
 	left:50%;
-	margin-left:-300px;
+	margin-left:-45%;
 	margin-top:30px;
 	background:#fff;
 	box-shadow:5px 5px 1px #aaa; 
@@ -169,8 +166,8 @@ body{
 	color:#000;
 }
 .article span:nth-child(3){
-	width:400px;
-	height:auto;
+	width:90%;
+	height:70%;
 	position:absolute;
 	left:30px;
 	top:50px;
@@ -178,12 +175,13 @@ body{
 	line-height:20px;
 	font-size:1em;
 	color:#000;
+	overflow:hidden;
 }
 .article span:nth-child(4){
 	width:150px;
 	height:20px;
 	position:absolute;
-	bottom:20px;
+	bottom:10px;
 	background:#39c;
 	text-align:center;
 	font-size:1.5em;
@@ -194,22 +192,22 @@ body{
 	color:#39c;
 }
 .side1{
-	width:200px;
+	width:90%;
 	height:300px;
 	position:relative;
 	left:50%;
-	margin-left:-100px;
+	margin-left:-45%;
 	margin-top:30px;
 	background:#fff;
 	border-radius:2px;
 	border:2px solid #9c3;
 }
 .side1 img{
-	width:200px;
+	width:100%;
 	height:auto;
 }
 .side1 span{
-	width:200px;
+	width:100%;
 	height:100px;
 	position:absolute;
 	bottom:0px;
