@@ -186,6 +186,7 @@ body{
 	text-align:center;
 	font-size:1.5em;
 	color:#fff;
+	cursor: pointer;
 }
 .article span:nth-child(4):hover{
 	background:#fff;
@@ -215,5 +216,27 @@ body{
 	line-height:100px;
 	background:#cf9;
 	
-	
+}
+.side_l{
+	width:100px;
+	height:100px;
+	position:fixed;
+	left:-50px;
+	bottom:-10px;
+	z-index:0;
+	background:url(../images/body_side_l_1.png) center no-repeat;
+	transform:rotate(30deg);
+}
+.side_l:hover{
+	transform:rotate(45deg);
+	transform:translate(50px,10px);
+}
+.side_r{
+	width:50px;
+	height:800px;
+	position:fixed;
+	right:30px;
+	top:-600px;
+	z-index:0;
+	background:url(../images/body_side_r_1.png) center no-repeat;
 }

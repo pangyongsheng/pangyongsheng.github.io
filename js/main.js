@@ -45,12 +45,14 @@ var scrollFunc=function(ev)
 		if(oEvent.wheelDelta > 0)
 		{
 			 $("#menu").show();
+			  topUp();
 			 
 		}
 		if(oEvent.wheelDelta < 0)
 		{
 			hidef();
 			$("#menu").hide();
+			topDown();
 			
 		}
 	}
@@ -59,11 +61,13 @@ var scrollFunc=function(ev)
 		if (oEvent.detail< 0)
 		{
 			 $("#menu").show();
+			  topUp();
 		}
 		if (oEvent.detail> 0)
 		{
 			hidef();
 			$("#menu").hide();
+			topDown();
 		}
 	}
 }	
@@ -81,4 +85,22 @@ function adpaHeight()
 {
 	 var bodyHeight = document.documentElement.clientHeight;			//获取当前浏览器宽高
     document.getElementById("first").style.height = (parseInt(bodyHeight)) + 'px';		//设置当前div宽高
+}
+function topDown(){
+	var oSideR=document.getElementById("side_right");
+	var oSideRT=oSideR.offsetTop+20;
+	
+	startMove(oSideR, 
+	{
+		"top":"-300"
+	})
+}
+function topUp(){
+	var oSideR=document.getElementById("side_right");
+	var oSideRT=oSideR.offsetTop+20;
+	
+	startMove(oSideR, 
+	{
+		"top":"-600"
+	})
 }
