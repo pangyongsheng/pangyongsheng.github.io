@@ -31,7 +31,6 @@ $(function(){
 	$("#head").mouseover(function(){
 		$("#menu").show();
 	});
-	
 	contentLoad();
 //onload over
 });
