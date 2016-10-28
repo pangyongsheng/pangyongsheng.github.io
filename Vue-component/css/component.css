@@ -1,0 +1,52 @@
+
+/*1*/
+.t1-search{
+	width: 90%;
+	height: 20px;
+	overflow: hidden;
+	position: relative;
+	top: 20px;
+}
+.t1-search-input:focus~.t1-icon
+{
+	transition:all .5s ease;
+	transform:rotate(-30deg);
+}
+	
+.t1-icon{
+	width: 20px;
+	height: 20px;
+	position: relative;
+	left: 165px;
+	float: right;
+}
+.t1-search-input{
+	position: relative;
+	right: 35px;
+	float: right;
+	border: none;
+    border-bottom: 1px solid #ccc;
+    background-color: rgba(0,0,0,0);
+    font-size: 1.2em;
+}
+#w1 table{
+	width: 80%;
+	min-width: 300px;
+	margin: 30px auto;
+}
+#w1 th{	
+	background: #66cccc;
+    font-weight: 400;
+    color: #fff;
+    cursor: pointer;
+}
+#w1 tr:nth-of-type(odd) {
+    background: #f9f9f9;
+}
+#w1 tr:nth-of-type(even) {
+    background: #e6e6e6;
+}
+#w1 td, th {
+    border: 1px solid #bcbcbc;
+    padding: 5px 10px;
+}

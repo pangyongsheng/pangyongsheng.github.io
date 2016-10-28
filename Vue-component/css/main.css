@@ -1,0 +1,131 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+    font-size: 12px;
+    background-color: #f9f9f9;
+    font-family:"Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+}
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    border: none;
+}
+table,td,th {
+	border-collapse: collapse;
+}
+input{
+	outline: none;
+}
+template{
+    display: none;
+}
+.clearfloat::after{
+	content:" ";
+    display:block;
+    height:0px;
+    clear:both;
+}
+/**/
+header{
+	width: 100%;
+	min-width: 320px;
+	height: 50px;
+	position:fixed;
+	top: 0px;
+    left: 0px;
+    z-index: 100;
+	background-color:#66cccc; 
+
+}
+header>span{
+	margin-left: 50px;
+	color: #fff;
+	font-size: 30px;
+	font-weight: bolder;
+	line-height: 50px;
+}
+#content{
+	width: 80%;
+	position: relative;
+	margin-top: 100px;
+}
+.unit{
+	width: 90%;
+	min-height: 300px;
+	position: relative;
+	margin: 20px auto;
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0px 0px 3px #daeceb;
+	overflow: hidden;
+}
+.describe{
+	width: 100%;
+	min-width: 30px;
+	height: 30px;
+	position: relative;
+	padding-left: 20px;
+	background-color: #ccc;
+	color:#222222;
+	font-size: 20px;
+	line-height: 30px;
+}
+aside{
+	width: 20%;
+	min-width: 150px;
+	min-height:400px; 
+	position: fixed;
+	right: 0px;
+	top:100px;
+	border-left: 1px solid #000;
+}
+aside>h3{
+	width: 100%;
+	text-align: center;
+	cursor: pointer;
+}
+aside>p{
+	font-size: 16px;
+	padding-left: 10px;
+	color:#666;
+}
+aside>nav{
+	width: 100%;
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+}
+aside>nav>a{
+	width: 30%;
+	display: inline-block;
+	cursor: pointer;
+	text-align: center;
+	border-right: 1px solid #fff;
+}
+aside>nav>a:nth-child(3){
+	border: none;
+}
+footer{
+	width: 100%;
+	height: 120px;
+	background-color:#66cccc; 
+	text-align: center;
+	color: #fff;
+	font-size: 30px;
+	font-weight: bolder;
+	line-height: 120px;
+	color: #000;
+	z-index: 100;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>vue components of pang</title>
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/component.css">
+	<script src="frame/vue.min.js"></script>
+</head>
+<body>
+	<header>
+		<span>Vue component</span>	
+	</header>
+	
+	<article id="content">
+		<section class="unit">
+			<h1 class="describe">可搜索表格&lt;selecttb&gt;</h1>
+			<div class="wrapper" id="w1">
+				<selecttb :ths="tableHead" :tbdatas="tableData" :tdnames="tableName"></selecttb>
+			</div>
+		</section>
+		<section class="unit" id="button1">
+			<h1 class="describe">组件1</h1>
+			<div class="wrapper">
+				
+			</div>
+		</section>
+		<section class="unit">
+			<h1 class="describe">组件1</h1>
+			<div class="wrapper">
+				
+			</div>
+		</section>
+		<section class="unit">
+			<h1 class="describe">组件1</h1>
+			<div class="wrapper">
+				
+			</div>
+		</section>
+		<section class="unit">
+			<h1 class="describe">组件1</h1>
+			<div class="wrapper">
+				
+			</div>
+		</section>
+	</article>
+	<aside>
+		<h3 id="bt_tx">说明</h3>
+		<br>
+		<p id="intro"></p>
+		<nav>
+			<a id="bt_ht">html</a>
+			<a id="bt_cs">css</a>
+			<a id="bt_js">js</a>
+		</nav>
+	</aside>
+	<footer>
+		END
+	</footer>
+	<!-- template1 -->
+	<template id="tpl1">
+		<div class="t1-search clearfloat">
+			<input type="text" v-model="filt" class="t1-search-input" placeholder="Search"/>
+			<img  class="t1-icon" src="img/p1.png">
+		</div>
+        <table>
+            <thead>
+                <tr>
+                    <th v-for="col in ths">
+                        {{ col | capitalize }}
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="tr in tbdatas | filterBy filt">
+                    <td v-for="col in tdnames">
+                        {{tr[col]}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+	</template>
+</body>
+<script src="js/component.js"></script>
+<script src="js/main.js"></script>
+</html>
