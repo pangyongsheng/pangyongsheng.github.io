@@ -10,7 +10,7 @@
 </head>
 <body>
 	<header>
-		<span>Vue component</span>	
+		<span>组件效果展示</span>	
 	</header>
 	
 	<article id="content">
@@ -20,10 +20,22 @@
 				<selecttb :ths="tableHead" :tbdatas="tableData" :tdnames="tableName"></selecttb>
 			</div>
 		</section>
-		<section class="unit" id="button1">
-			<h1 class="describe">组件1</h1>
-			<div class="wrapper">
-				
+		<section class="unit">
+			<h1 class="describe">弹窗&lt;dialog&gt;</h1>
+			<div class="wrapper" id="w2">
+				<dialog v-bind:show.sync="show">
+					<div class="dialog-header" slot="header">
+						<h1 class="dialog-title">标题</h1>
+					</div>
+					<div class="dialog-body" slot="body">
+						<p>内容提示信息等</p>
+						<p>此处可以可以放一段文字，表单，或者是一些图片。</p>
+					</div>
+					<div class="dialog-footer" slot="footer">
+						<button class="dialog-btn" @click="closeDialog">关闭按钮</button>
+					</div>
+				</dialog>
+				<button class="dialog-btn2" @click="openDialog">点击打开弹窗</button>
 			</div>
 		</section>
 		<section class="unit">
@@ -80,6 +92,18 @@
                 </tr>
             </tbody>
         </table>
+	</template>
+	<!-- template2 -->
+	<template id="tpl-dialog">
+		<div class="dialog" v-show="show" transition="dialogShow">
+			<div class="dialog-content">
+				<img class="icon-close" src="img/p10.png" @click="close">
+				<slot name="header"></slot>
+				<slot name="body"></slot>
+				<slot name="footer"></slot>
+			</div>
+			<div class="dialog-overlay"></div>
+		</div>
 	</template>
 </body>
 <script src="js/component.js"></script>

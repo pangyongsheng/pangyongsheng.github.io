@@ -9,7 +9,6 @@
 }
 .t1-search-input:focus~.t1-icon
 {
-	transition:all .5s ease;
 	transform:rotate(-30deg);
 }
 	
@@ -19,6 +18,7 @@
 	position: relative;
 	left: 165px;
 	float: right;
+	transition:all .5s ease;
 }
 .t1-search-input{
 	position: relative;
@@ -50,3 +50,107 @@
     border: 1px solid #bcbcbc;
     padding: 5px 10px;
 }
+/*2*/
+.dialog-content{
+    width: 480px;
+    min-height: 200px;
+    position: fixed;
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+    z-index: 2000;
+    backface-visibility: hidden;
+    perspective: 1300px;
+   	background-color: #fff;
+   	border-radius: 3px;
+   	animation:dialogani 1s;
+}
+@keyframes dialogani
+{
+	from {top:-50%;}
+	to {top:20px;}
+}
+.icon-close{
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	transition: .8s ease all;
+	cursor: pointer;
+
+}
+.icon-close:hover{
+	transform: rotateZ(-90deg);
+}
+.dialog-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.5);
+    transition: all .6s;
+}
+/*doem*/
+.dialog-header {
+    background: #6cc;
+    color: #fff;
+}
+.dialog-title {
+    margin: 0;
+    font-size: 2em;
+    text-align: center;
+    font-weight: 200;
+    line-height: 2em;
+}
+.dialog-body {
+    padding: 2em;
+}
+.dialog-footer {
+    margin: 0 2em;
+    padding: 2em 0;
+    text-align: right;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.dialog-btn {
+    display: inline-block;
+    border: 0;
+    box-sizing: border-box;
+    background: #6cc;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bolder;
+    border-radius: 1px;
+    line-height: 2em;
+    padding: 0 1em;
+    transition: .4s ease-out;
+    border: 1px solid #7dd;
+    outline: 0;
+    text-decoration: none;
+}
+.dialog-btn:hover{
+	background-color: #fff;
+	color: #6cc;
+}
+.dialog-btn2{
+	width: 200px;
+	height: 60px;
+	position: relative;
+	left: 50%;
+	top:100px;
+	margin-left: -100px;
+	color: #fff;
+	background-color: #6cc;
+	font-size: 30px;
+	border: 1px solid #7dd;
+	transition: .4s ease-out;
+	box-shadow: 0 0 3px #ccc;
+	font-weight: bolder;
+}
+.dialog-btn2:hover{
+	background-color: #fff;
+	color: #6cc;
+}
+/*3*/

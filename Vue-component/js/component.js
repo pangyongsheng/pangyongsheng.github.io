@@ -42,7 +42,33 @@ var ex1=new Vue({
         ]
 	}
 })
+//2
+Vue.component('dialog', {
+    template: '#tpl-dialog',
+    props: ['show'],
+    methods: {
+        close: function() {
+            this.show = false;
+        }
+    }
+})
 
+ var ex2=new Vue({
+    el: '#w2',
+    data: {
+        show: false
+    },
+    methods: {
+        openDialog: function() {
+            this.show = true;
+            var a=this.show;
+            console.log(a);
+        },
+        closeDialog: function() {
+            this.show = false
+        }
+    }
+})
 
 
 
