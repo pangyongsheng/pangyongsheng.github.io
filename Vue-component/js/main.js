@@ -63,35 +63,4 @@ if (document.addEventListener)
     }
 window.onmousewheel=document.onmousewheel=page.scollChange;	
 
-var intro=[
-	{
-		e:'左侧为可搜索表格组件，组件参数为表头lo信息，表格信息。用户可以通过输入关键字进行筛选对应的表格行',
-		h:'&lt;selecttb :ths="tableHead" :tbdatas="tableData" :tdnames="tableName"&gt;&lt;selecttb&gt;',
-		c:'css',
-		j:'js'
-	},
-	{
-		e:'左侧为弹窗组件，可通过三个slot插槽注入弹窗头部，主体和尾部信息，从而实现提示、警告、选择等弹窗信息，同时可通过绑定shows属性绑定弹窗的隐藏和显示.',
-		h:'<>',
-		c:'css',
-		j:'js'
-	},
-	{
-		e:'这是一个第3个组件',
-		h:'<>',
-		c:'css',
-		j:'js'
-	},
-	{
-		e:'这是一个第4个组件',
-		h:'<>',
-		c:'css',
-		j:'js'
-	},
-	{
-		e:'这是一个第53个组件',
-		h:'<>',
-		c:'css',
-		j:'js'
-	}
-]
+

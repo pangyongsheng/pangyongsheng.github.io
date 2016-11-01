@@ -6,7 +6,7 @@
 	<title>vue components of pang</title>
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/component.css">
-	<script src="frame/vue.min.js"></script>
+	
 </head>
 <body>
 	<header>
@@ -39,19 +39,20 @@
 			</div>
 		</section>
 		<section class="unit">
-			<h1 class="describe">组件1</h1>
+			<h1 class="describe">可增删改查表格&lt;curd-table&gt;</h1>
+			<div class="wrapper" id="w3">
+				<curd-table :data-list="people" :columns="columns">
+        		</curd-table>
+			</div>
+		</section>
+		<section class="unit">
+			<h1 class="describe">轮播图</h1>
 			<div class="wrapper">
 				
 			</div>
 		</section>
 		<section class="unit">
-			<h1 class="describe">组件1</h1>
-			<div class="wrapper">
-				
-			</div>
-		</section>
-		<section class="unit">
-			<h1 class="describe">组件1</h1>
+			<h1 class="describe">路由模拟app单页切换</h1>
 			<div class="wrapper">
 				
 			</div>
@@ -105,7 +106,70 @@
 			<div class="dialog-overlay"></div>
 		</div>
 	</template>
+	<!-- template3 -->
+	<template id="curd-table">
+		<div class="t1-search clearfloat">	
+			<button class=" dialog-btn curd-table-add-btn" @click="openNewItemDialog('添加')">添加</button>
+            <input type="text" v-model="searchKey" class="t1-search-input" placeholder="Search"/>
+            <img  class="t1-icon" src="img/p1.png">
+        </div>
+		
+	    <table>
+	        <thead>
+	            <tr>
+	                <th v-for="col in columns">
+	                    {{ col.name }}
+	                </th>
+	                <th>
+	                    删除
+	                </th>
+	            </tr>
+	        </thead>
+	        <tbody>
+	            <tr v-for="(index,entry) in dataList | filterBy searchKey">
+	                <td v-for="col in columns">
+	                    <span v-if="col.key"><a href="javascript:void(0)" @click="openEditItemDialog(index)">{{entry[col.name]}}</a></span>
+                		<span v-else>{{entry[col.name]}}</span>
+	                </td>
+	                <td class="text-center">
+	                    <button class="btn-danger" @click="deleteItem(index)">删除</button>
+	                </td>
+	            </tr>
+	        </tbody>
+	    </table>
+
+	   	<curd-table-dialog :mode="mode" :title="title" :fields="columns" :item.sync="item" v-on:create-item="createItem" v-on:update-item="updateItem"></curd-table-dialog>
+	</template>
+	
+	<template id="curd-table-dialog">
+		<div class="dialog" v-if="show" transition="dialogShow">
+			<div class="dialog-content">
+				<img class="icon-close" src="img/p10.png" @click="close">
+				<div class="dialog-header">
+					<h1 class="dialog-title">{{title}}</h1>
+				</div>
+
+				<div class="dialog-body">
+					<div v-for="field in fields" class="form-group" >
+                        <label>{{ field.name }}</label>
+                        <select v-if="field.dataSource" v-model="item[field.name]">
+                            <option v-for="opt in field.dataSource" :value="opt">{{ opt }}</option>
+                        </select>
+                        <input v-else type="text" v-model="item[field.name]" :disabled="mode === 2 && field.key">
+                	</div>
+				</div>
+
+				<div class="dialog-footer">
+					<button class="dialog-btn" @click="save">确认</button>
+					<button class="dialog-btn" @click="close">取消</button>
+				</div>
+			</div>
+			<div class="dialog-overlay" ></div>
+		</div>
+	</template>
 </body>
+<script src="frame/vue.min.js"></script>
 <script src="js/component.js"></script>
 <script src="js/main.js"></script>
+<script src="js/intro.js"></script>
 </html>

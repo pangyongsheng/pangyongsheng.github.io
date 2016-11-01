@@ -154,3 +154,173 @@
 	color: #6cc;
 }
 /*3*/
+#w3 .t1-search{
+    width: 90%;
+    height: 35px;
+    overflow: hidden;
+    position: relative;
+    top: 20px;
+}
+#w3 .t1-search-input:focus~.t1-icon
+{   
+    transform:rotate(-30deg);
+}
+    
+#w3 .t1-icon{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    left: 165px;
+    top:15px;
+    float: right;
+    transition:all .5s ease;
+}
+#w3 .t1-search-input{
+    position: relative;
+    right: 35px;
+    top:15px;
+    float: right;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background-color: rgba(0,0,0,0);
+    font-size: 1.2em;
+}
+#w3 table{
+    width: 80%;
+    min-width: 300px;
+    margin: 30px auto;
+}
+.text-center {
+    text-align: center;
+}
+#w3 th{    
+    background: #66cccc;
+    font-weight: 400;
+    color: #fff;
+    cursor: pointer;
+}
+#w3 tr:nth-of-type(odd) {
+    background: #f9f9f9;
+}
+#w3 tr:nth-of-type(even) {
+    background: #e6e6e6;
+}
+#w3 td, th {
+    border: 1px solid #bcbcbc;
+    padding: 5px 10px;
+}
+#w3 .btn-danger {
+    padding: 5px 15px;
+    border: 1px solid #ec6a45;
+    background: #fd8366;
+    color: #fff;
+    transition: .4s ease-out;
+    border-radius: 3px;  
+    font-weight: 600;
+}
+#w3 .btn-danger:hover{
+    opacity: 0.8;
+    font-size: 13px;
+}
+/*dialog*/
+#w3 .dialog-content{
+            width: 480px;
+            min-height: 200px;
+            position: fixed;
+            left: 50%;
+            top: 20px;
+            transform: translateX(-50%);
+            z-index: 2000;
+            backface-visibility: hidden;
+            perspective: 1300px;
+            background-color: #fff;
+            border-radius: 3px;
+            animation:dialogani 1s;
+        }
+        @keyframes dialogani
+        {
+            from {top:-50%;}
+            to {top:20px;}
+        }
+       #w3 .icon-close{
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            transition: .8s ease all;
+            cursor: pointer;
+
+        }
+      #w3 .icon-close:hover{
+            transform: rotateZ(-90deg);
+        }
+       #w3 .dialog-overlay{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.5);
+            transition: all .6s;
+        }
+        /*doem*/
+        #w3 .dialog-header {
+            background: #6cc;
+            color: #fff;
+        }
+        #w3 .dialog-title {
+    margin: 0;
+    font-size: 2em;
+    text-align: center;
+    font-weight: 200;
+    line-height: 2em;
+}
+#w3 .dialog-body {
+    padding: 2em;
+}
+#w3 .dialog-footer {
+    margin: 0 2em;
+    padding: 2em 0;
+    text-align: right;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+#w3 .dialog-btn {
+    display: inline-block;
+    border: 0;
+    box-sizing: border-box;
+    background: #6cc;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bolder;
+    border-radius: 1px;
+    line-height: 2em;
+    padding: 0 1em;
+    transition: .4s ease-out;
+    border: 1px solid #7dd;
+    outline: 0;
+    text-decoration: none;
+}
+#w3 .dialog-btn:hover{
+    background-color: #fff;
+    color: #6cc;
+}
+.curd-table-add-btn {
+    left: 12%;
+    position: relative;
+}
+.form-group{
+    margin: 10px 60px;
+}
+.form-group label{
+    
+}
+.form-group input{
+    display: inline-block;
+    height: 1.8rem;
+    line-height: 1.8rem;
+    padding: 3px 6px;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+}
