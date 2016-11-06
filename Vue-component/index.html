@@ -53,8 +53,15 @@
 		</section>
 		<section class="unit">
 			<h1 class="describe">路由模拟app单页切换</h1>
-			<div class="wrapper">
-				
+			<div class="wrapper" >
+				<div class="mobile-model" id="w5">
+     <router-view class="mobile-view"></router-view>
+     <div class="mobile-contro">
+        <a class="mobile-contro-a" v-link="{ path: '/page1',activeClass:'mobile-act1'}"></a>
+        <a class="mobile-contro-b" v-link="{ path: '/page2',activeClass:'mobile-act2'}"></a>
+        <a class="mobile-contro-c" v-link="{ path: '/page3',activeClass:'mobile-act3'}"></a>         
+    </div>
+</div>
 			</div>
 		</section>
 	</article>
@@ -167,8 +174,23 @@
 			<div class="dialog-overlay" ></div>
 		</div>
 	</template>
+	<!-- template5 -->
+<template id="mobile-page1">
+    <h1 class="mobile-page-head">page1</h1>
+    <p class="mobile-page-p">{{msg}}</p>
+</template>
+<template id="mobile-page2">
+    <h1 class="mobile-page-head">page2</h1>
+    <p class="mobile-page-p">{{msg}}</p>
+</template>
+<template id="mobile-page3">
+    <h1 class="mobile-page-head">page3</h1>
+    <p class="mobile-page-p">{{msg}}</p>
+</template>
+
 </body>
 <script src="frame/vue.min.js"></script>
+<script src="frame/vue-router.js"></script>
 <script src="js/component.js"></script>
 <script src="js/main.js"></script>
 <script src="js/intro.js"></script>

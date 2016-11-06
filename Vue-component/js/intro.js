@@ -24,7 +24,7 @@ var intro=[
 		j:'js'
 	},
 	{
-		e:'这是一个第53个组件',
+		e:'使用vue-router模拟手机app操作切换页面效果',
 		h:'<>',
 		c:'css',
 		j:'js'

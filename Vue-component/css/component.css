@@ -324,3 +324,65 @@
     font-size: 1.2rem;
     border: 1px solid #ccc;
 }
+
+
+/*5*/
+.mobile-model{
+    width: 275px;
+    height: 400px;
+    margin: auto;
+    margin-top: 10px;
+    position: relative;
+    border: 3px solid #828686;
+    border-radius: 6px;
+}
+.mobile-view{
+    width: 100%;
+}
+.mobile-contro{
+    width: 100%;
+    height: 45px;
+    position: absolute;
+    bottom: 0px;
+    background-color: #fff;
+}
+.mobile-contro>a{
+    width: 32%;
+    height: 100%;
+    display: inline-block;
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.mobile-contro-a{
+    background-image:url(../img/p4.png);
+}
+.mobile-contro-b{
+    background-image:url(../img/p6.png);
+}
+.mobile-contro-c{
+    background-image:url(../img/p8.png);
+}
+.mobile-act1{
+    background-image:url(../img/p5.png);
+}
+.mobile-act2{
+    background-image:url(../img/p7.png);
+}
+.mobile-act3{
+    background-image:url(../img/p9.png);
+}
+.mobile-page-head{
+    width: 100%;
+    height: 50px;
+    background-color: #6cc;
+    color: #f6f6f6;
+    line-height: 50px;
+    text-align: center;
+    box-shadow: 0px 2px 3px #ccc;
+}
+.mobile-page-p{
+    position: relative;
+    font-size: 20px;
+    top:20px;
+}

@@ -211,5 +211,54 @@ var ex3=new Vue({
     }
 })
 
+//5
+var page1 = Vue.extend({
+    template: '#mobile-page1',
+    data: function() {
+        return {
+            msg: 'This is page one'
+        }
+    }
+})
+var page2 = Vue.extend({
+    template: '#mobile-page2',
+    data: function() {
+        return {
+            msg: 'This is page two'
+        }
+    }
+})
+var page3 = Vue.extend({
+    template: '#mobile-page3',
+    data: function() {
+        return {
+            msg: 'This is page three'
+        }
+    }
+})
+
+
+var router = new VueRouter();
+
+router.map({
+    '/page1': {
+        component:page1
+       },
+    '/page2': {
+        component:page2
+    },
+    '/page3':{
+        component:page3
+    }
+})
+
+router.redirect({
+    '/': '/page1'
+})
+
+var mobileApp = Vue.extend({});
+
+router.start(mobileApp, '#w5');
+
 ///////////
 })()
