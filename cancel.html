@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>取消关注</title>
+<body>
+<button onclick="cancelfollow()">取消关注</button>
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.3.js"></script>
+<script>
+//取消关注
+var APP_ID = 'RUJdCQwHLKsxP111eM374No7-gzGzoHsz';
+var APP_KEY = 'LacxJsdVA5Y58CYCcIekcytH';
+AV.init({
+  appId: APP_ID,
+  appKey: APP_KEY
+});
+//登录
+(function signinf(){
+	var nm="生生";
+	var ps="123";
+	AV.User.logIn(nm,ps).then(function (loginedUser) {
+		console.log("登录成功");
+	}, function (error) {
+		console.log("登录失败");
+	});
+})();
+//取消关注
+function cancelfollow(thats)
+{
+	AV.User.current().unfollow('57bd8043c4c9710061639357').then(function(){
+		console.log("success");
+	}, function(err){
+		console.log(err);
+	});
+}
+
+</script>
+</body>
+</html>
+</html>
+			
