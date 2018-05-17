@@ -173,8 +173,9 @@
                 break;
             }
             nowAllNode.push(temp);
-            if(nowAllNode.lenght>2){
-                splice(0, 1);
+            //防止陷入无限循环  
+            if(nowAllNode.length>256){
+                nowAllNode.splice(0, 1);
             }
             _this.Open=[];
             //扩展节点
@@ -199,7 +200,7 @@
                 _this.step++;
                 lastState=_this.nowOrder;
                 _this.nowOrder=_this.Closed.pop().state;
-                console.log(_this.nowOrder);
+                console.log(JSON.stringify(_this.nowOrder));
                 _this.blockInit();
             }
             n++;
