@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<style>
+ 	/*环形文字*/
+	.circlar path{ /*svg填充为空*/
+		fill: none;	
+	}
+	.circlar{
+		width: 300px;
+		height: 300px;
+		margin: 100px;
+	}
+	.circlar svg{
+		display: block;
+		overflow: visible;
+	}
+	/*竖排文字*/
+	.tbl{
+		margin: 100px;
+		writing-mode:tb-rl;
+	}
+	.tbl>span::after{
+		content: '\A';
+		white-space: pre;
+	}
+	/*文字换行*/
+	dt, dd { 
+		display: inline; 
+	}
+	dt{ 
+		margin: 0; 
+		font-weight: bold; 
+	}
+	dd+dt::before {
+		content: '\A';
+		white-space: pre;
+	}
+	dd+dd::before {
+		content: ', ';
+		font-weight: normal;
+	}
+</style>
+<body>
+	<div class="circlar">
+		<svg viewBox="0 0 100 100">
+			<path d="M 0,50 a 50,50 0 1, 1 0, 1 z" id="circle"></path>
+			<text>
+				<textPath xlink:href="#circle">
+					这是一个圆形文字效果w(ﾟДﾟ)w ~~~！！！
+				</textPath>
+			</text>
+		</svg>
+	</div>
+	<div class="tbl">
+		<span>何日归家洗客袍？</span>
+		<span>银字笙调，心字香烧。</span>
+		<span>流光容易把人抛，红了樱桃，绿了芭蕉。</span>
+	</div>
+	<dl>
+		<dt>标题:</dt>
+		<dd>内容</dd>
+		<dt>Email:</dt>
+		<dd>yongsheng_pang@163.com</dd>
+		<dd>pang_yongsheng@outlook.com</dd>
+		<dd>123@qq.com</dd>
+		<dt>地址:</dt>
+		<dd>北京</dd>
+	</dl>
+</body>
+</html>

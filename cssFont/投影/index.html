@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+.div {
+    font-weight: bold;
+    font-size: 80px;
+    padding: 50px;
+    margin: 50px;
+    border: 10px dashed #666;
+}
+
+
+/*1*/
+
+.shadow1 {
+    color: red;
+    text-shadow: 5px 5px 5px #000;
+}
+
+
+/*2*/
+
+.shadow2 {
+    color: white;
+    text-shadow: -1px 0px 1px red, 1px 0px 1px red, 0px -1px 1px red, 0px 1px 1px red;
+}
+
+
+/*3*/
+
+.shadow3 {
+    color: white;
+    text-shadow: -1px -1px 3px black, 0 0 5px blue, 0 0 8px blue;
+}
+
+
+/*4*/
+.shadow4 {
+    color:  white;
+   	 text-shadow: 1px 0px 0px #00B4F1,2px 0px 0px #00B4F1,3px 1px 0px #00B4F1,0px 1px 0px #000;
+}
+
+
+/*5*/
+.shadow5 {
+    color: blue;
+    background-color: #000;
+    text-shadow: 0px 0px 3px white, 0px 0px 5px white;
+}
+
+</style>
+
+<body>
+    <div class="div shadow1">文字的投影效果</div>
+    <br>
+    <div class="div shadow2">文字的描边效果</div>
+    <br>
+    <div class="div shadow3">文字的浮雕效果</div>
+    <br>
+    <div class="div shadow4">文字的剪纸效果</div>
+    <br>
+    <div class="div shadow5">文字的发光效果</div>
+</body>
+
+</html>

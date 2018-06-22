@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css文字剪贴蒙版</title>
+</head>
+<style>
+	.div{
+		font-weight: bold;
+    	font-size: 80px;
+    	margin: 50px;
+    	border: 10px dashed #666;
+	}
+	/*1*/
+	.bg-clip{
+		background-image: url(../img/1.jpg);
+		background-repeat:no-repeat;
+		background-size: cover;
+		-webkit-background-clip: text;
+		background-clip: text;
+		color:transparent;
+	}
+	/*2*/
+	.bg-clip2{
+		background:linear-gradient(
+			90deg,
+	        red 0%,
+	        red 14.3%,
+	        orange 0,
+	        orange 28.6%,
+	        yellow 0,
+	        yellow 42.9%,
+	        green 0,
+	        green 57.2%,
+	        blue 0,
+	        blue 71.5%,
+	        indigo 0,
+	        indigo 85.8%,
+	        violet 0,
+	        violet 100%
+        );
+		background-repeat:no-repeat;
+		background-size: cover;
+		-webkit-background-clip: text;
+		background-clip: text;
+    	-webkit-text-fill-color: transparent;
+		text-fill-color: transparent;
+	}
+	/*3*/
+	.bg-clip3{
+		background-image: linear-gradient(45deg, #ccc 0%, #ccc 30%, #00B4F1 0%, #00B4F1 70%, #ccc 0%, #ccc 100%);
+		background-size: 50% 100%;
+		-webkit-background-clip: text;
+		background-clip: text;
+		color:transparent;
+		background-position: 0% 50%;
+		animation: aitf 8s linear infinite;
+	}
+	@keyframes aitf {
+		0% { background-position: 0% 50%; }
+		100% { background-position: 100% 50%; }
+	}
+</style>
+<body>
+	<div class="div bg-clip">图片背景文字剪贴蒙版</div>
+	<br>
+	<div class="div bg-clip2">渐变背景文字剪贴蒙版</div>
+	<br>
+	<div class="div bg-clip3">剪贴蒙版动画效果</div>
+</body>
+</html>
