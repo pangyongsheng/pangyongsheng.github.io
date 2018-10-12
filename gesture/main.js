@@ -5,8 +5,8 @@
     var istouch = false;
     var start = [];
     var gesturestart = new CustomEvent('gesturestart');
-    var gesturechange = new CustomEvent('gesturestart');
-    var gestureend = new CustomEvent('gesturestart');
+    var gesturechange = new CustomEvent('gesturechange');
+    var gestureend = new CustomEvent('gestureend');
 
     document.addEventListener("touchstart", function(e) {
         if(e.touches.length >= 2) { //判断是否有两个点在屏幕上
