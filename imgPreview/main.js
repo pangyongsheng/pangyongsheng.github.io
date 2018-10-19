@@ -4,7 +4,7 @@ window.onload = function() {
     $Dom.onclick = function() {
         var objE = document.createElement("div");
         objE.innerHTML = '<div class="bgM" >' +
-                '<img src="http://lc-yee5xnhu.cn-n1.lcfile.com/48b869acb01c13b89d5d.jpg"  id="img_scan" class="img-custom-img2"/>' +
+                '<img src="http://lc-yee5xnhu.cn-n1.lcfile.com/56ac839df83d3bcdc63b.jpg"  id="img_scan" class="img-custom-img2"/>' +
             '</div>';
         document.body.appendChild(objE.children[0]);
         //退出图片预览事件
