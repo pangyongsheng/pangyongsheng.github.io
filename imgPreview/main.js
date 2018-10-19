@@ -80,8 +80,8 @@ window.onload = function() {
         e.preventDefault();
         if (e.touches.length >= 2 && isDoubleTouch) { //手势事件
             var now = e.touches; //得到第二组两个点
-            var scale = getDistance(now[0], now[1]) / getDistance(gesturesPosition[0], gesturesPosition[1]); //得到缩放比例
-            var rotation = getAngle(now[0], now[1]) - getAngle(gesturesPosition[0], gesturesPosition[1]); //得到旋转角度差
+            var scale = getDistance(now[0], now[1]) / getDistance(start[0], start[1]); //得到缩放比例
+            var rotation = getAngle(now[0], now[1]) - getAngle(start[0], start[1]); //得到旋转角度差
             gesturechange.scale = scale.toFixed(2);
             gesturechange.rotation = rotation.toFixed(2);
             e.target.dispatchEvent(gesturechange);
