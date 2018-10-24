@@ -1,10 +1,11 @@
 window.onload = function() {
     //点击图片进入预览
-    var $Dom = document.querySelector(".img1");
+    var $Dom = document.querySelector(".preview");
     $Dom.onclick = function() {
+        var temp = this.src;
         var objE = document.createElement("div");
         objE.innerHTML = '<div class="bgM" >' +
-                '<img src="http://lc-yee5xnhu.cn-n1.lcfile.com/56ac839df83d3bcdc63b.jpg"  id="img_scan" class="img-custom-img2"/>' +
+                '<img src="'+temp+'"  id="img_scan" class="img-custom-img2"/>' +
             '</div>';
         document.body.appendChild(objE.children[0]);
         //退出图片预览事件
@@ -20,8 +21,8 @@ window.onload = function() {
            event.stopPropagation();
         }
 
-
-        previewImg();
+        createEvent();//自定义事件
+        previewImg();//图片预览事件监听
     }
 
 };
@@ -32,13 +33,18 @@ window.onload = function() {
  *  - gesturechange     手势缩放
  *  - gestureend        手势事件结束
  *  - swipeMove         单指滑动
+ *  - doubleTouch       双击
+ *  - oneTouch          单击
  */
-(function() {
+var createEvent = function(){
+
+    var $bm = document.querySelector(".bgM");
     //
     var isTouch = false;
     var isDoubleTouch = false; //是否为多触点   
     var start = []; //存放触点坐标
     var now, delta; //当前时间，两次触发事件时间差
+    var timer = null;
     var startPosition, movePosition, endPosition; //滑动起点，移动，结束点坐标
     //事件声明
     var gesturestart = new CustomEvent('gesturestart');
@@ -46,14 +52,11 @@ window.onload = function() {
     var gestureend = new CustomEvent('gestureend');
     var swipeMove = new CustomEvent('swipeMove');
     var doubleTouch = new CustomEvent("doubleTouch");
-    //touch事件
-    var supportTouch = 'ontouchend' in document,
-        touchStartEvent = supportTouch ? 'touchstart' : 'mousedown', //触屏
-        touchMoveEvent = supportTouch ? 'touchmove' : 'mousemove', //移动
-        touchEndEvent = supportTouch ? 'touchend' : 'mouseup'; //离屏
+    var oneTouch = new CustomEvent("oneTouch");
+
 
     //监听touchstart事件
-    document.addEventListener(touchStartEvent, function(e) {
+    $bm.addEventListener('touchstart', function(e) {
         //e.preventDefault();
         if (e.touches.length >= 2) { //判断是否有两个点在屏幕上
             isDoubleTouch = true;
@@ -66,18 +69,22 @@ window.onload = function() {
             now = Date.now();
             startPosition = [e.touches[0].pageX, e.touches[0].pageY];
             if (delta > 0 && delta <= 250) { //双击事件
+                clearTimeout(timer);
                 doubleTouch.position = [e.touches[0].pageX - e.target.offsetLeft, e.touches[0].pageY - e.target.offsetTop];
                 e.target.dispatchEvent(doubleTouch);
             } else { //滑动事件
-                isTouch = true;
+                timer = setTimeout(function(){
+                    e.target.dispatchEvent(oneTouch);//单击事件
+                },450)
             }
-
+            isTouch = true;
         }
     }, false);
 
     //监听touchmove事件
-    document.addEventListener(touchMoveEvent, function(e) {
-        e.preventDefault();
+    $bm.addEventListener('touchmove', function(e) {
+        //e.preventDefault();
+        clearTimeout(timer);
         if (e.touches.length >= 2 && isDoubleTouch) { //手势事件
             var now = e.touches; //得到第二组两个点
             var scale = getDistance(now[0], now[1]) / getDistance(start[0], start[1]); //得到缩放比例
@@ -96,7 +103,7 @@ window.onload = function() {
     }, false);
 
     //监听touchend事件
-    document.addEventListener(touchEndEvent, function(e) {
+    $bm.addEventListener('touchend', function(e) {
         if (isDoubleTouch) {
             isDoubleTouch = false;
             gestureend.position = endPosition;
@@ -128,7 +135,7 @@ window.onload = function() {
         return [x, y];
     }
 
-})()
+}
 
 
 
@@ -149,6 +156,8 @@ var previewImg = function() {
     $imgs.addEventListener('gestureend', gesturef, false);
     $imgs.addEventListener('swipeMove', gesturef, false);
     $imgs.addEventListener('doubleTouch', gesturef, false);
+    $imgs.addEventListener('oneTouch', gesturef, false);
+
 
     var tMatrix = [1, 0, 0, 1, 0, 0]; //x缩放，无，无，y缩放，x平移，y平移
     var originLast, maxSwipeLeft, maxSwipeRight, maxSwipeTop, maxSwipeBottom; //上下左右可拖动距离
@@ -178,10 +187,10 @@ var previewImg = function() {
                 tMatrix[3] = tMatrix[3] + sc - 1 > 0.5 && tMatrix[3] + sc - 1 < 3 ? tMatrix[3] + sc - 1 : tMatrix[3];
                 var temp = tMatrix.join(",");
                 $imgs.style.transform = "matrix(" + temp + ")";
-                maxMove()
                 break;
 
             case "gestureend":
+                maxMove();
                 break;
  
             case "swipeMove":
@@ -201,11 +210,16 @@ var previewImg = function() {
             case "doubleTouch":
                 originLast = event.position;
                 $imgs.style.transformOrigin = event.position[0] + "px " + event.position[1] + "px";
-                tMatrix[0] = 2;
+                tMatrix[0] = 2;//缩放倍数为2
                 tMatrix[3] = 2;
                 var temp = tMatrix.join(",");
                 $imgs.style.transform = "matrix(" + temp + ")";
-                maxMove()
+                maxMove();
+                break;
+
+            case "oneTouch":
+                var $bg = document.querySelector(".bgM");
+                document.body.removeChild($bg);
                 break;
         }
 
